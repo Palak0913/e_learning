@@ -46,6 +46,8 @@ class User(AbstractBaseUser):
     active = models.BooleanField(default=True)
     staff       = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
+    is_teacher = models.BooleanField(default=False)
+
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username',]
@@ -75,3 +77,11 @@ class User(AbstractBaseUser):
         return self.active
 
 
+"""
+class teacher_request(models.Model):
+    user = model.ForeignKey(User, on_delete=models.CASCADE)
+    mobile_num= models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.user.username
+"""
