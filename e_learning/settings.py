@@ -25,7 +25,8 @@ SECRET_KEY = '3%e8yw*u58mfbsht13e2f6l80(wj3sd2e4)utc&h@0cn3y5tj&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -60,8 +61,6 @@ MIDDLEWARE = [
 ]
 
 
-ALLOWED_HOSTS=['*']
-CORS_ORIGIN_ALLOW_ALL = True
 
 
 ROOT_URLCONF = 'e_learning.urls'
