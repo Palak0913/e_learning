@@ -25,8 +25,8 @@ SECRET_KEY = '3%e8yw*u58mfbsht13e2f6l80(wj3sd2e4)utc&h@0cn3y5tj&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['*']
-CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS=[]
+
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'UserAccount',
     'knox',
     'courses'
@@ -138,6 +139,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+
+CORS_ORIGIN_WHITELIST = (
+       'http://localhost:3000',
+'http://localhost:8000',
+'http://localhost:8080',
+'https://e-learning-proj.herokuapp.com'
+ )
 
 
 REST_FRAMEWORK = {
