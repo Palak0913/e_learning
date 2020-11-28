@@ -7,6 +7,14 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
 from knox.auth import TokenAuthentication
 
+"""
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import authentication, permissions
+from django.contrib.auth import get_user_model
+User = get_user_model()
+"""
+
 from courses.models import Course
 from django.views.generic.detail import DetailView
 
@@ -47,3 +55,22 @@ class LoginAPI(KnoxLoginView):
 ###############################
 
 #class RequestAPI():
+
+"""
+class ListUsers(APIView):
+    
+    View to list all users in the system.
+
+    * Requires token authentication.
+    * Only admin users are able to access this view.
+    
+    authentication_classes = [TokenAuthentication.authenticate]
+    permission_classes = [permissions.IsAdminUser]
+
+    def get(self, request, format=None):
+        
+        Return a list of all users.
+        
+        usernames = [user.username for user in User.objects.all()]
+        return Response(usernames)
+"""
