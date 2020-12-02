@@ -3,10 +3,12 @@ import json
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.test import APITestCase
+from .serializers import RegisterSerializer, UserSerializer
+from .views import RegisterAPI
 
 User=get_user_model()
 
-class RegistrationTestCase(APITestCase):
+class Test_Register(APITestCase):
 
     def test_registration(self):
         data = {
@@ -15,6 +17,6 @@ class RegistrationTestCase(APITestCase):
             "password": "xyz123"
         }
         response = self.client.post("api/register/", data )
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 # Create your tests here.
